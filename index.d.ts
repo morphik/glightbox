@@ -20,7 +20,7 @@ declare namespace Glightbox {
         /**
          * Show video title
          * @see https://google.com/youtube/player_parameters#release_notes_08_23_2018
-         * 
+         *
          * @deprecated
          */
         showinfo?: number;
@@ -29,10 +29,10 @@ declare namespace Glightbox {
          */
         iv_load_policy?: number;
     }
-    
+
     /**
      * Vimeo embed video api
-     * 
+     *
      * @see https://help.vimeo.com/hc/en-us/articles/360001494447-Using-Player-Parameters
      */
     interface VimeoOptions {
@@ -85,45 +85,45 @@ declare namespace Glightbox {
         /**
          * Name of the selector for example '.glightbox' or 'data-glightbox'
          * or '*[data-glightbox]'
-         * 
+         *
          * @default '.glightbox'
          */
         selector?: string;
         /**
          * Instead of passing a selector you can pass all the items
          * that you want in the gallery.
-         * 
+         *
          * @default null
          */
         elements?: [] | null;
         /**
          * Name of the skin, it will add a class to the lightbox
          * so you can style it with css.
-         * 
+         *
          * @default 'clean'
          */
         skin?: string;
         /**
          * Name of the effect on lightbox open. (zoom, fade, none)
-         * 
+         *
          * @default 'zoom'
          */
         openEffect?: string;
         /**
          * Name of the effect on lightbox close. (zoom, fade, none)
-         * 
+         *
          * @default 'zoom'
          */
         closeEffect?: string;
         /**
          * Name of the effect on slide change. (slide, fade, zoom, none)
-         * 
+         *
          * @default 'slide'
          */
         slideEffect?: string;
         /**
          * More text for descriptions on mobile devices.
-         * 
+         *
          * @default 'See more'
          */
         moreText?: string;
@@ -131,99 +131,99 @@ declare namespace Glightbox {
          * Number of characters to display on the description before adding
          * the moreText link (only for mobiles),
          * if 0 it will display the entire description.
-         * 
+         *
          * @default 60
          */
         moreLength?: number;
         /**
          * Show or hide the close button.
-         * 
+         *
          * @default true
          */
         closeButton?: boolean;
         /**
          * Enable or disable the touch navigation (swipe).
-         * 
+         *
          * @default true
          */
         touchNavigation?: boolean;
         /**
          * Image follow axis when dragging on mobile.
-         * 
+         *
          * @default true
          */
         touchFollowAxis?: boolean;
         /**
          * Enable or disable the keyboard navigation.
-         * 
+         *
          * @default true
          */
         keyboardNavigation?: boolean;
         /**
          * Close the lightbox when clicking outside the active slide.
-         * 
+         *
          * @default true
          */
         closeOnOutsideClick?: boolean;
         /**
          * Start lightbox at defined index.
-         * 
+         *
          * @default 0
          */
         startAt?: number;
         /**
          * Default width for inline elements and iframes
-         * 
+         *
          * @default '900px'
          */
         width?: string;
         /**
          * Default height for inline elements and iframes
-         * 
+         *
          * @default '506px'
          */
         height?: string;
         /**
          * Default width for videos.
-         * 
+         *
          * @default '560px'
          */
         videosWidth?: string;
         /**
          * Global position for slides description
-         * 
+         *
          * @default 'bottom'
          */
         descPosition?: string;
         /**
          * Loop slides on end.
-         * 
+         *
          * @default false
          */
         loop?: Exclude<boolean, undefined>;
         /**
          * Enable or disable zoomable images
-         * 
+         *
          * @default true
          */
         zoomable?: boolean;
         /**
          * Enable or disable mouse drag to go prev and next slide
-         * 
+         *
          * @default true
          */
         draggable?: boolean;
         /**
          * Used with draggable. Number of pixels the user
          * has to drag to go to prev or next slide.
-         * 
+         *
          * @default 40
          */
         dragToleranceX?: number;
         /**
          * Used with draggable. Number of pixels the user has to drag
          * up or down to close the lightbox
-         * 
+         *
          * @default 65
          */
         dragToleranceY?: number;
@@ -231,13 +231,13 @@ declare namespace Glightbox {
          * If true the slide will automatically change to prev/next or close
          * if dragToleranceX or dragToleranceY is reached,
          * otherwise it will wait till the mouse is released.
-         * 
+         *
          * @default false
          */
         dragAutoSnap?: boolean;
         /**
          * Enable or disable preloading.
-         * 
+         *
          * @default true
          */
         preload?: boolean;
@@ -247,8 +247,8 @@ declare namespace Glightbox {
         svg?: Record<'close' | 'next' | 'prev', string>;
         /**
          * Define or adjust lightbox animations.
-         * 
-         * @see: 
+         *
+         * @see:
          */
         cssEffects?: Record<string, Record<'in' | 'out', string>>;
         /**
@@ -261,7 +261,7 @@ declare namespace Glightbox {
         slideHTML?: string;
         /**
          * Autoplay videos on open.
-         * 
+         *
          * @default true
          */
         autoplayVideos?: boolean;
@@ -269,7 +269,7 @@ declare namespace Glightbox {
          * If true video will be focused on play to allow
          * keyboard sortcuts for the player, this will deactivate
          * prev and next arrows to change slide.
-         * 
+         *
          */
         autofocusVideos?: boolean;
         plyr?: PlyrOptions;
@@ -313,6 +313,7 @@ declare namespace Glightbox {
         player?: null | Record<any, any>;
     }
 
+    // @ts-ignore
     type Payload<T extends EventTypes> = {
         slide_before_change: {
             prev: BaseData;
@@ -419,7 +420,7 @@ declare class GlightboxInit {
     /**
      * Stop video at specified
      * node or index
-     * 
+     *
      * @deprecated use slidePlayerPause instead
      */
     stopSlide(slide: Element | number): void;
